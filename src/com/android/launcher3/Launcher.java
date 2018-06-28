@@ -47,6 +47,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Point;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -474,6 +475,46 @@ public class Launcher extends BaseActivity
 
         setContentView(mLauncherView);
 
+
+
+        String url = "https://play.google.com/store/apps/details?id=com.aospstudio.android.apps.mediabook";
+        Intent shortcutIntent = new Intent(Intent.ACTION_VIEW);
+        shortcutIntent.setData(Uri.parse(url));
+        shortcutIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        shortcutIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        Intent addIntent = new Intent();
+        addIntent.putExtra(Intent.EXTRA_SHORTCUT_INTENT, shortcutIntent);
+        addIntent.putExtra(Intent.EXTRA_SHORTCUT_NAME, "Mediabook");
+        addIntent.putExtra(Intent.EXTRA_SHORTCUT_ICON_RESOURCE, Intent.ShortcutIconResource.fromContext(getApplicationContext(), R.drawable.mediabook_download));
+        addIntent.setAction("com.android.launcher.action.INSTALL_SHORTCUT");
+        getApplicationContext().sendBroadcast(addIntent);
+
+        String url1 = "https://play.google.com/store/apps/details?id=com.aospstudio.qrcsg";
+        Intent shortcutIntent1 = new Intent(Intent.ACTION_VIEW);
+        shortcutIntent1.setData(Uri.parse(url1));
+        shortcutIntent1.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        shortcutIntent1.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        Intent addIntent1 = new Intent();
+        addIntent1.putExtra(Intent.EXTRA_SHORTCUT_INTENT, shortcutIntent1);
+        addIntent1.putExtra(Intent.EXTRA_SHORTCUT_NAME, "QRCSG");
+        addIntent1.putExtra(Intent.EXTRA_SHORTCUT_ICON_RESOURCE, Intent.ShortcutIconResource.fromContext(getApplicationContext(), R.drawable.qrcsg_download));
+        addIntent1.setAction("com.android.launcher.action.INSTALL_SHORTCUT");
+        getApplicationContext().sendBroadcast(addIntent1);
+
+        String url2 = "https://play.google.com/store/apps/details?id=org.aospstudio.donate";
+        Intent shortcutIntent2 = new Intent(Intent.ACTION_VIEW);
+        shortcutIntent2.setData(Uri.parse(url2));
+        shortcutIntent2.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        shortcutIntent2.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        Intent addIntent2 = new Intent();
+        addIntent2.putExtra(Intent.EXTRA_SHORTCUT_INTENT, shortcutIntent2);
+        addIntent2.putExtra(Intent.EXTRA_SHORTCUT_NAME, "Donate");
+        addIntent2.putExtra(Intent.EXTRA_SHORTCUT_ICON_RESOURCE, Intent.ShortcutIconResource.fromContext(getApplicationContext(), R.drawable.donate_download));
+        addIntent2.setAction("com.android.launcher.action.INSTALL_SHORTCUT");
+        getApplicationContext().sendBroadcast(addIntent2);
+
+
+
         // Listen for broadcasts
         IntentFilter filter = new IntentFilter();
         filter.addAction(Intent.ACTION_SCREEN_OFF);
@@ -525,12 +566,9 @@ public class Launcher extends BaseActivity
     }
 
     private void loadExtractedColorsAndColorItems() {
-        // TODO: do this in pre-N as well, once the extraction part is complete.
-        if (Utilities.ATLEAST_NOUGAT) {
-            mExtractedColors.load(this);
-            mHotseat.updateColor(mExtractedColors, !mPaused);
-            mWorkspace.getPageIndicator().updateColor(mExtractedColors);
-        }
+        mExtractedColors.load(this);
+        mHotseat.updateColor(mExtractedColors, !mPaused);
+        mWorkspace.getPageIndicator().updateColor(mExtractedColors);
     }
 
     private LauncherCallbacks mLauncherCallbacks;
