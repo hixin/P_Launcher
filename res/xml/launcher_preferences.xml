@@ -93,13 +93,19 @@
             android:persistent="false">
             <intent
                 android:action="android.settings.APPLICATION_DETAILS_SETTINGS"
-                android:data="package:com.google.android.apps.nexuslauncher" />
+                android:data="package:org.aospstudio.launcher3" />
+                <!--android:data="package:com.aospstudio.nexuslauncher" /> -->
         </Preference>
 
         <Preference
+            android:key="dev"
+            android:title="Developer"
+            android:summary="AOSP STUDIO LLC." />
+
+        <Preference
             android:key="credits"
-            android:title="Based on Rootless Pixel Launcher"
-            android:summary="By AmirZaidi" />
+            android:title="Based on"
+            android:summary="AmirZ Rootless Pixel Launcher" />
 
     </PreferenceScreen>
 
