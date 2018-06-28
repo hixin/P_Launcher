@@ -4,11 +4,8 @@ Pure Android launcher in Android 8.1 and 9.0 design
 
 
 ## Download P Launcher
-[P Launcher play-release 5.0+ v1.0.4-BETA2](https://aospstudio.github.io/apps/PLauncher/PLauncher-1.0.4B2-minAPI21-play-release.apk)
+[P Launcher](https://play.google.com/store/apps/details?id=org.aospstudio.launcher3)
 
-[P Launcher Go play-release 5.0+ v1.0.4-BETA2](https://aospstudio.github.io/apps/PLauncher/PLauncherGo-1.0.4B2-minAPI21-play-release.apk)
-
-[P Launcher aosp-debug 5.0+ v1.0.4-BETA2](https://aospstudio.github.io/apps/PLauncher/PLauncher-1.0.4B2-minAPI21-aosp-debug.apk) Full function
 
 
 ## Getting Started
