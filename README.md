@@ -4,7 +4,7 @@ Pure Android launcher in Android 8.1 and 9.0 design
 
 
 ## Download P Launcher
-[P Launcher](https://play.google.com/store/apps/details?id=org.aospstudio.launcher3)
+[Get it on Google Play](https://play.google.com/store/apps/details?id=org.aospstudio.launcher3)
 
 
 
