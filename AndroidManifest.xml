@@ -21,7 +21,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.android.launcher3">
-    <uses-sdk android:targetSdkVersion="23" android:minSdkVersion="21"/>
+    <uses-sdk android:targetSdkVersion="28" android:minSdkVersion="21"/>
     <!--
     Manifest entries specific to Launcher3. This is merged with AndroidManifest-common.xml.
     Refer comments around specific entries on how to extend individual components.
@@ -41,7 +41,7 @@
     <permission
         android:name="${applicationId}.permission.WRITE_SETTINGS"
         android:permissionGroup="android.permission-group.SYSTEM_TOOLS"
-        android:protectionLevel="signatureOrSystem"
+        android:protectionLevel="signature"
         android:label="@string/permlab_write_settings"
         android:description="@string/permdesc_write_settings"/>
 
@@ -54,7 +54,7 @@
     <permission
         android:name="${applicationId}.permission.QSB"
         android:permissionGroup="android.permission-group.SYSTEM_TOOLS"
-        android:protectionLevel="signatureOrSystem"/>
+        android:protectionLevel="signature"/>
     <uses-permission android:name="${applicationId}.permission.QSB" />
 
     <!-- Custom -->
@@ -66,12 +66,13 @@
         android:fullBackupContent="@xml/backupscheme"
         android:hardwareAccelerated="true"
         android:icon="@drawable/ic_launcher_home"
+        android:roundIcon="@mipmap/ic_launcher_round"
         android:label="@string/derived_app_name"
         android:theme="@style/LauncherTheme"
         android:largeHeap="@bool/config_largeHeap"
         android:restoreAnyVersion="true"
         android:supportsRtl="true"
-        tools:ignore="ManifestResource">
+        tools:ignore="GoogleAppIndexingWarning,ManifestResource">
 
         <!--
         Main launcher activity. When extending only change the name, and keep all the
@@ -88,11 +89,20 @@
             android:resizeableActivity="true"
             android:resumeWhilePausing="true"
             android:taskAffinity=""
-            android:enabled="true">
+            android:enabled="true"
+            tools:targetApi="n">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.HOME" />
                 <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.google.android.apps.nexuslauncher.PLauncherTheme"
+            android:label="Android P icons">
+            <intent-filter>
+                <action android:name="com.teslacoilsw.launcher.THEME" />
             </intent-filter>
         </activity>
 
@@ -118,7 +128,7 @@
         <provider
             android:name="com.android.launcher3.LauncherProvider"
             android:authorities="${applicationId}.settings"
-            android:exported="true"
+            android:exported="false"
             android:writePermission="${applicationId}.permission.WRITE_SETTINGS"
             android:readPermission="${applicationId}.permission.READ_SETTINGS" />
 
