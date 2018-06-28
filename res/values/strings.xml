@@ -334,6 +334,8 @@
     <string name="title_app_suggestions">Display app suggestions</string>
     <string name="summary_app_suggestions">At the top of your All Apps list</string>
     <string name="about_app_version">Version</string>
+    <string name="app_releases_url"></string>
+    <string name="app_name_pixel_launcher">Pixel Launcher</string>
     <string name="app_name_p_launcher">P Launcher</string>
     <string name="title_disable_suggestions_prompt">Turn off app suggestions?</string>
     <string name="msg_disable_suggestions_prompt">"Suggestions won't appear at the top of your apps list, and the usage data used to create them will be permanently erased."</string>
@@ -343,4 +345,5 @@
     <string name="hide_app">Hide app</string>
     <string name="icon_shape_rounded_square">Rounded square</string>
     <string name="smartspace_hours_mins">%1$s %2$s</string>
+    <string name="action_preferences">@string/smartspace_preferences</string>
 </resources>
