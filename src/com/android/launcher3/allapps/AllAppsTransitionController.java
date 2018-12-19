@@ -12,6 +12,7 @@ import android.graphics.Color;
 import android.support.animation.SpringAnimation;
 import android.support.v4.graphics.ColorUtils;
 import android.support.v4.view.animation.FastOutSlowInInterpolator;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.AccelerateInterpolator;
@@ -199,6 +200,7 @@ public class AllAppsTransitionController implements TouchController, SwipeDetect
     @Override
     public void onDragStart(boolean start) {
         mCaretController.onDragStart();
+        Log.i(TAG, "onDragStart: " + mCaretController.toString());
         cancelAnimation();
         mCurrentAnimation = LauncherAnimUtils.createAnimatorSet();
         mShiftStart = mAppsView.getTranslationY();

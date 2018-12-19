@@ -34,7 +34,7 @@ import android.view.animation.Interpolator;
  */
 public class SwipeDetector {
 
-    private static final boolean DBG = false;
+    private static final boolean DBG = true;
     private static final String TAG = "SwipeDetector";
 
     private int mScrollConditions;
@@ -270,6 +270,7 @@ public class SwipeDetector {
 
     private boolean reportDragStart(boolean recatch) {
         mListener.onDragStart(!recatch);
+        Log.i(TAG, "reportDragStart: " + mListener.toString());
         if (DBG) {
             Log.d(TAG, "onDragStart recatch:" + recatch);
         }
